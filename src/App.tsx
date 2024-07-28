@@ -13,6 +13,7 @@ export const App = () => {
     QuestionSetT[]
   >([]);
   const [category, setCategory] = React.useState("all");
+  const [questionIndex, setQuestionIndex] = React.useState<number>(-1);
   const [questionSet, setQuestionSet] = React.useState<QuestionSetT | null>(
     null
   );
@@ -40,6 +41,8 @@ export const App = () => {
       combinedQuestions = [...otherQuestions];
     }
     setQuestionsSelection(combinedQuestions);
+    setQuestionSet(null);
+    setRevealAnswer(false);
   }, [category]);
 
   const handleDrawQuestion = () => {
@@ -47,6 +50,18 @@ export const App = () => {
     const length = questionsSelection.length;
     const randomIndex = Math.floor(Math.random() * (length - 1) + 1);
     setQuestionSet(questionsSelection[randomIndex]);
+    setQuestionIndex(randomIndex);
+  };
+
+  const handleNextQuestion = () => {
+    setRevealAnswer(false);
+    if (questionIndex === questionsSelection.length) {
+      setQuestionSet(questionsSelection[0]);
+      setQuestionIndex(0);
+    } else {
+      setQuestionSet(questionsSelection[questionIndex + 1]);
+      setQuestionIndex((prev) => prev + 1);
+    }
   };
 
   return (
@@ -64,7 +79,8 @@ export const App = () => {
               </Button>
             ))}
           </div>
-          <div className="flex gap-4 w-1/5">
+          <div className="flex gap-4 w-1/3">
+            <Button handleClick={handleNextQuestion}>Next question</Button>
             <Button handleClick={handleDrawQuestion}>
               Draw random question
             </Button>
@@ -77,16 +93,20 @@ export const App = () => {
           >
             Show answer
           </button>
-          {questionSet && (
+          {questionSet ? (
             <div className="flex items-center justify-center pt-4">
               {!revealAnswer ? (
                 <h1 className="text-4xl text-center">{questionSet.question}</h1>
               ) : (
                 <div
-                  className="px-5"
+                  className="px-5 flex flex-col gap-2"
                   dangerouslySetInnerHTML={{ __html: questionSet.answer }}
                 />
               )}
+            </div>
+          ) : (
+            <div className="flex items-center justify-center pt-4">
+              <p>Click on "next question" or "Draw random question" button.</p>
             </div>
           )}
         </div>
