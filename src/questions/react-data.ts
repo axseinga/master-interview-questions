@@ -423,9 +423,3 @@ export const reactQuestions = [
     answer: `<p>It is required for each component to have a render() function. This function returns the HTML, which is to be displayed in the component.</p>`,
   },
 ];
-
-export const jsQuestions = [
-
-];
-
-export const otherQuestions = [];

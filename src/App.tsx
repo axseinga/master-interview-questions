@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "./components/button";
-import { jsQuestions, otherQuestions, reactQuestions } from "./data";
+import { reactQuestions } from "./questions/react-data";
+import { jsQuestions } from "./questions/js-data";
+import { otherQuestions } from "./questions/others-data";
 
 type QuestionSetT = {
   id: string;
@@ -94,12 +96,11 @@ export const App = () => {
             Show answer
           </button>
           {questionSet ? (
-            <div className="flex items-center justify-center pt-4">
-              {!revealAnswer ? (
-                <h1 className="text-4xl text-center">{questionSet.question}</h1>
-              ) : (
+            <div className="flex items-center pt-4 flex-col gap-4">
+              <h1 className="text-4xl text-center">{questionSet.question}</h1>
+              {revealAnswer && (
                 <div
-                  className="px-5 flex flex-col gap-2"
+                  className="px-4 flex flex-col gap-2 text-left justify-items-start w-full"
                   dangerouslySetInnerHTML={{ __html: questionSet.answer }}
                 />
               )}
