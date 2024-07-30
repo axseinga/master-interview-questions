@@ -186,4 +186,84 @@ export const otherQuestions = [
     answer:
       "<p>Assume you're working on a new feature in a dedicated branch, and another team member pushes new commits to the master branch.</p><p><b>Merge</b></p><ul><li>Merge is used to incorporate new commits into your feature branch.</li><li>Every time you need to include modifications, this requires an extra merging commit.</li><li>It taints the history of your feature branch.</li></ul><p><b>Rebase</b></p><ul><li>You can rebase the feature branch into master instead of merging it.</li><li>This incorporates all the new commits in the master branch.</li><li>It also re-writes the project history by creating brand new commits for each commit in the original branch.</li></ul>",
   },
+  {
+    id: "O32",
+    question: "What is the difference between head and body?",
+    answer: "",
+  },
+  {
+    id: "O33",
+    question: "What is a difference between inline and block elements?",
+    answer: "",
+  },
+  {
+    id: "O34",
+    question: "How link external files to the document?",
+    answer: "",
+  },
+  {
+    id: "O35",
+    question: "Explain communication between client and server.",
+    answer: "",
+  },
+  {
+    id: "O36",
+    question: "Explain what is and how works REST protocol.",
+    answer: "",
+  },
+  {
+    id: "O37",
+    question: "What is CORS?",
+    answer: "",
+  },
+  {
+    id: "O38",
+    question: "What is HTTP protocol?",
+    answer: "",
+  },
+  {
+    id: "O39",
+    question: "Name differences between PUT/PATCH.",
+    answer: "",
+  },
+  {
+    id: "O40",
+    question: "Describe difference between http and https.",
+    answer: "",
+  },
+  {
+    id: "O41",
+    question: "What is the difference between vector and raster image file type?",
+    answer: "",
+  },
+  {
+    id: "O42",
+    question: "Describe difference between http and https.",
+    answer: "",
+  },
+  {
+    id: "O43",
+    question: "What is semantic in HTML?",
+    answer: "",
+  },
+  {
+    id: "O44",
+    question: "Different options for embedding images and fonts on the site.",
+    answer: "",
+  },
+  {
+    id: "O45",
+    question: "Different options for embedding images and fonts on the site.",
+    answer: "",
+  },
+  {
+    id: "O46",
+    question: "Different options for embedding images and fonts on the site.",
+    answer: "",
+  },
+  {
+    id: "O47",
+    question: "Different options for embedding images and fonts on the site.",
+    answer: "",
+  },
 ];

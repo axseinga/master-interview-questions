@@ -422,4 +422,44 @@ export const reactQuestions = [
     question: "What is the use of render() in React?",
     answer: `<p>It is required for each component to have a render() function. This function returns the HTML, which is to be displayed in the component.</p>`,
   },
+  {
+    id: "R64",
+    question: "Explain what is prop types and how to use it?",
+    answer: `<p>It is used as a validator to ensure the data your component receives is valid. PropTypes serves as the method you can use to ensure the correct datatype is passed for each prop, meaning whatever is rendered is correct. It can also be used to ensure a value is passed, set default values, and lots more. Since React v15.5 prop types has to be installed as npm package. Once installed, propTypes has to be imported into the component we want tu use it. Attach the component name to the PropTypes method and create an object containing all your prop's validation.</p>`,
+  },
+  {
+    id: "R65",
+    question: "What is JSX/.TSX and how it is related to JS?",
+    answer: `<p>JSX is a syntax extension for JavaScript that allows developers to write HTML-like syntax in their JavaScript code. It is used in React to create UI components. JSX is not a separate language, but a syntax extension that can be transformed into regular JavaScript by a transpiler. The resulting code is then executed in the browser. JSX allows developers to write code that looks like HTML but is actually JavaScript. This makes it easier to read and write complex UI components.</p>
+    
+    <p>TSX is a syntax extension for TypeScript that combines JSX syntax with TypeScript's type system. It allows developers to write type-checked code with the benefits of JSX syntax. TSX is not a separate language, but a syntax extension that can be compiled into regular JavaScript by a TypeScript compiler.</p>`,
+  },
+  {
+    id: "R66",
+    question: "What is the reason for uncontrolled and controlled components?",
+    answer: `<p>By controlling form elements via state, you gain more control over user interactions and can easily enforce validation, format data, and respond to changes.</p>
+    
+    <p>Uncontrolled components in React manage their own state internally rather than relying on React state. This approach is useful for simple forms where you don't need to manipulate the input data through React state updates.</p>`,
+  },
+  {
+    id: "R67",
+    question: "Describe component lifecycle in details.",
+    answer: `<p>A React component has three different phases in its lifecycle, including mounting, updating, and unmounting. Each phase has its own methods which are responsible for a particular stage in a component’s lifecycle. These methods are for class-based components, functional component has their own life cycle methods.</p>
+    
+    <p><b>Mounting Phase</b><p>
+    <p>The mounting phase is when a new component is created and it is inserted into the DOM or, in simple words, when the actual life of a React component begins. This happens once, and is often called “initial render.” To get through this phase, four lifecycle methods are called: constructor, static getDerivedStateFromProps, render, and componentDidMount.</p>
+
+    <p><b>Updating phase</b><p>
+    <p>The updating phase is when the component has any updates or it re-renders. This phase is triggered when the props or state are updated.</p>
+    <p>It can also be triggered when a component consists of the following methods: static getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate(), and componentDidUpdate().</p>
+
+    <p><b>Unmounting phase</b><p>
+    <p>The unmounting phase is the last stage in the lifecycle of a React component. This phase refers to when a component is removed from the DOM and is no longer rendered or accessible. During this phase, React performs a series of cleanup operations to ensure that the component and its associated resources are properly cleared of the DOM tree.</p>
+
+    <p>This can happen for various reasons, such as when the component is no longer needed, the parent component is re-rendered without including the child component, or when the application is navigating to a different page or view. It has only one method. </p>
+
+    <p>The componentWillUnmount() lifecycle method componentWillUnmount() method is called just before the component is removed from the DOM. It allows you to perform any necessary cleanup, such as canceling timers, removing event listeners, or clearing any data structures that were set up during the mounting phase. All of the component’s state and props are destroyed..</p>
+
+    `,
+  },
 ];

@@ -17,7 +17,7 @@ export const App = () => {
   const [category, setCategory] = React.useState("all");
   const [questionIndex, setQuestionIndex] = React.useState<number>(-1);
   const [questionSet, setQuestionSet] = React.useState<QuestionSetT | null>(
-    null
+    null,
   );
   const [revealAnswer, setRevealAnswer] = React.useState(false);
 
@@ -31,7 +31,7 @@ export const App = () => {
   React.useEffect(() => {
     let combinedQuestions: QuestionSetT[] = [];
     if (category === "all") {
-      combinedQuestions = [...reactQuestions];
+      combinedQuestions = [...reactQuestions, ...jsQuestions, ...otherQuestions];
     }
     if (category === "js") {
       combinedQuestions = [...jsQuestions];
@@ -68,9 +68,9 @@ export const App = () => {
 
   return (
     <>
-      <div className="w-screen flex flex-col p-5 gap-8">
-        <div className="w-full flex flex-col gap-6 items-center justify-center">
-          <div className="grid grid-cols-4 w-full gap-2">
+      <div className="flex w-screen flex-col gap-8 p-2 sm:p-5">
+        <div className="flex w-full flex-col items-center justify-center gap-6">
+          <div className="grid w-full grid-cols-4 gap-2">
             {categories.map((cat, index) => (
               <Button
                 key={`${index}_${cat.label}`}
@@ -81,26 +81,26 @@ export const App = () => {
               </Button>
             ))}
           </div>
-          <div className="flex gap-4 w-1/3">
+          <div className="flex gap-4 sm:w-1/3">
             <Button handleClick={handleNextQuestion}>Next question</Button>
             <Button handleClick={handleDrawQuestion}>
               Draw random question
             </Button>
           </div>
         </div>
-        <div className="w-2/4 border border-slate-700 bg-slate-200 m-auto min-h-96 rounded-md shadow-lg p-2">
+        <div className="m-auto min-h-96 rounded-md border border-slate-700 bg-slate-200 p-2 shadow-lg sm:w-2/4">
           <button
             onClick={() => setRevealAnswer(true)}
-            className="bg-slate-100 border border-slate-500 rounded-md p-2 m-auto"
+            className="m-auto rounded-md border border-slate-500 bg-slate-100 p-2"
           >
             Show answer
           </button>
           {questionSet ? (
-            <div className="flex items-center pt-4 flex-col gap-4">
-              <h1 className="text-4xl text-center">{questionSet.question}</h1>
+            <div className="flex flex-col items-center gap-4 pt-4">
+              <h1 className="text-center text-4xl">{questionSet.question}</h1>
               {revealAnswer && (
                 <div
-                  className="px-4 flex flex-col gap-2 text-left justify-items-start w-full"
+                  className="flex w-full flex-col justify-items-start gap-2 px-4 text-left"
                   dangerouslySetInnerHTML={{ __html: questionSet.answer }}
                 />
               )}
