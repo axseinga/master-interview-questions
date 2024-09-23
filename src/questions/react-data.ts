@@ -1,75 +1,68 @@
 export const reactQuestions = [
   {
     id: "R1",
-    question: "What is the React Function Component Life-Cycle Method?",
-    answer: `<p><b>Mounting:</b> This phase occurs when the component is initially rendered and added to the DOM.</p>
-              <p><b>Updating:</b> This phase occurs when the component’s state or props change, causing a re-render. It receives new props or state, usually in response to an interaction.</p>
-              <p><b>Unmounting:</b> This phase occurs when the component is removed from the DOM.</p>`,
+    question: "What is the React Component Life-Cycle Method?",
+    answer: `<p>In React class components, life-cycle methods are special methods that allow to run specific code at different stages of a component’s life: when it’s created (mounted), updated, or removed (unmounted).</p>
+    <p><b>Mounting:</b> the component is created and added to the DOM (constructor() - he first method called when the component is created, componentDidMount() - This method is called once, right after the component is added to the page (DOM))</p>
+    <p><b>Updating:</b> the component’s props or state change (componentDidUpdate(): method called right after the component has re-rendered, shouldComponentUpdate(): to control if the component should update or not)</p>
+    <p><b>Unmounting:</b> the component is removed from the DOM (componentWillUnmount() - method called just before the component is removed from the DOM)</p>`,
   },
   {
     id: "R2",
     question: "What is JSX?",
-    answer: `<p>JSX stands for JavaScript XML. It is a syntax extension for JavaScript, used with React to describe what the UI should look like. JSX produces React elements.</p>`,
+    answer: `<p>JSX (JavaScript XML) is a syntax used in React to describe what the UI should look like. It looks like HTML but is written inside JavaScript. It allows to write HTML-like code in JavaScript files, which React then converts into actual HTML</p>`,
   },
   {
     id: "R3",
     question:
       "What are the differences between functional and class components?",
-    answer: `<p>Functional components are stateless, simpler, and are typically used for presentational purposes. Class components are stateful and provide more features via lifecycle methods.</p>`,
+    answer: `<p>Functional components are Javascript functions that return JSX, before react 16.8 they were called stateless because they coudn't handle state or lifecycle logic. Since the introduction of hooks they can manage state and side effects. Syntax is cleaner and shorter than in class components. Class components are extension of React.Component and written using ES6 class syntax. The state is managed in <b>constructor()</b> and with help of lifecycle methods. They require <b>render()</b> method, which returns JSX. They use <b>this</b> keyword to access props, state, and lifecycle methods. </p>`,
   },
   {
     id: "R4",
     question: "What is the purpose of state in React?",
-    answer: `<p>The state ( a component’s memory ) is a built-in React object that is used to contain data or information about the component. The state in a component can change over time, and whenever it changes, the component re-renders.</p>`,
+    answer: `<p>In React, state is a built-in object used to manage and store data that can change over time. It plays a crucial role in making components dynamic and interactive. We have local state that is managed and used within a single component and global state that is shared between multiple components across different parts of application.</p>`,
   },
   {
     id: "R5",
     question: "What is a prop in React?",
-    answer: `<p>Props (short for properties) are a mechanism for passing data from a parent component to its child components.</p>
+    answer: `<p>Props (short for properties) is a way for passing data from a parent component to its child components.</p>
     <ul>
-    <li>Props allow you to configure and customize child components, enabling dynamic and flexible component composition.</li>
+    <li>Props allow to configure and customize child components.</li>
     <li>It is a React built-in object that stores the value of attributes of a tag and works similarly to HTML attributes.</li>
     </ul>`,
   },
   {
     id: "R6",
     question: "What is the use of the useState hook?",
-    answer: `<p>useState is a hook that allows you to add state to functional components. It returns an array with the current state value and a function to update it.</p>`,
+    answer: `<p>useState is a hook that allows to add state to functional components. It returns an array with the current state value and a function to update it.</p>`,
   },
   {
     id: "R7",
     question: "What is the useEffect hook used for?",
-    answer: `<p>The useEffect hook in React is used to perform side effects in function components. It allows you to handle lifecycle events and perform actions such as fetching data, subscribing to events, or manipulating the DOM.</p>
+    answer: `<p>The useEffect hook in React is used to perform side effects in function components. It allows to handle lifecycle events and perform actions such as fetching data, subscribing to events, or manipulating the DOM.</p>
     <p>The useEffect hook takes two arguments: a callback function and a dependency array.</p>
     <p>The callback function is executed after every render of the component.</p>
     <p>No dependency passed: Runs on every render</p>
     <p>An empty array: Runs only on the first render</p>
-    P<p>rops or state values: Runs on the first render And any time any dependency value changes</p>
+    <p>Props or state values: Runs on the first render And any time any dependency value changes</p>
     `,
   },
   {
     id: "R8",
     question: "What is a higher-order component (HOC)?",
-    answer: `<p>Higher-order components (HOCs) are a pattern in React that allows you to reuse component logic by wrapping components with other components.</p>
-    <ul>
-    <li>Code Reusability: Extract common logic and reuse it across multiple components.</li>
-    <li>Props Manipulation: Modify or pass additional props to the wrapped component.</li>
-    <li>Rendering Control: Conditionally render the wrapped component based on specific conditions. (Render hijacking)</li>
-    <li>Performance Optimization: Optimize rendering by implementing memorization or caching techniques.</li>
-    <li>Context Manipulation: Provide or consume context to share data or behavior between components. State abstraction and manipulation.</li>
-    <li>Wrap and enhance functionality from third-party libraries.</li>
-    </ul>
+    answer: `<p>A higher-order component (HOC) is a special type of function in React that takes a component as an argument and returns a new component. HOCs are used to share common functionality between components without repeating code. They are a pattern for reusing component logic.</p>
     `,
   },
   {
     id: "R9",
     question: "What is the virtual DOM?",
-    answer: `<p>Virtual DOM provides an abstraction of the actual HTML DOM. It is a lightweight copy or representation of the real DOM, maintained by React, which allows for efficient updates and rendering of components.</p>`,
+    answer: `<p>The virtual DOM is a concept in React that helps improve the performance of web applications. The virtual DOM is a lightweight, in-memory representation of the actual DOM (Document Object Model). It is a copy of the real DOM that React keeps for efficient updates. When a component's state or props change, React creates a new virtual DOM tree. It compares this new virtual DOM tree with the previous one using a process called reconciliation. React then calculates the minimal number of changes needed to update the real DOM.</p>`,
   },
   {
     id: "R10",
     question: "How does React handle events?",
-    answer: `<p>React handles events using camelCase syntax and passes event handlers as functions rather than strings. Events are normalized across different browsers.</p>`,
+    answer: `<p>React handles events using a synthetic event system for consistency across browsers. We can attach event handlers with camelCase syntax directly in JSX. Event objects provide details about the event, and we can control propagation and default behaviors.</p>`,
   },
   {
     id: "R11",
@@ -355,8 +348,8 @@ export const reactQuestions = [
   },
   {
     id: "R55",
-    question: "What is the Prop drilling in reactjs?",
-    answer: `<p>Prop drilling occurs when a prop needs to be passed through several layers of nested components to reach a deeply nested child component that actually needs the prop. Each intermediary component in the hierarchy has to pass the prop down, even if it doesn't use the prop itself.</p>`,
+    question: "Why the state should not be updated directly?",
+    answer: `<p>In React, state should not be updated directly because doing so can lead to issues with how the component re-renders and manages its data. React provides a method called setState() to update the state properly. Direct state update:<ul><li>- won't trigger re-render.</li><li>- will cause React to not be able to manage or opitimise the updates (batching)</li><li>- it can cause inconsistencies between the state data</li></ul> </p>`,
   },
   {
     id: "R56",
@@ -395,9 +388,7 @@ export const reactQuestions = [
   {
     id: "R59",
     question: "What is the difference between the ES6 and ES5 standards?",
-    answer: `<p>exports vs export</p>
-    <p>require vs import</p>
-    <p>Components and Function</p>`,
+    answer: `<p>let and const vs var</p><p>arrow functions in ES6</p><p>template literals instead of concantenation ( + )</p><p>default parameters (in ES5 we had to check if the parameter is undefined)</p><p>classes</p><p>destructuring objects const { name, age } = person;</p><p>promises (in ES5 we had to use callbacks)</p><p>spread and rest operators (...)</p><p>exports vs export</p><p>require vs import</p><p>Components and Function</p>`,
   },
   {
     id: "R60",
@@ -420,7 +411,7 @@ export const reactQuestions = [
   {
     id: "R63",
     question: "What is the use of render() in React?",
-    answer: `<p>It is required for each component to have a render() function. This function returns the HTML, which is to be displayed in the component.</p>`,
+    answer: `<p>It is required for each class component to have a render() function. This function returns the JSX.</p>`,
   },
   {
     id: "R64",
@@ -461,5 +452,54 @@ export const reactQuestions = [
     <p>The componentWillUnmount() lifecycle method componentWillUnmount() method is called just before the component is removed from the DOM. It allows you to perform any necessary cleanup, such as canceling timers, removing event listeners, or clearing any data structures that were set up during the mounting phase. All of the component’s state and props are destroyed..</p>
 
     `,
+  },
+  {
+    id: "R68",
+    question: "What is the purpose of the callback function as an argument of setState()?",
+    answer: `<p>The callback function in setState() is used to execute code after the state has been updated and the component has re-rendered. This is important because setState() is asynchronous, meaning it doesn't immediately update the state, and the changes might not be reflected right away when the next line of code runs. By using the callback function, you can ensure that any actions depending on the updated state are performed after the state change is complete.</p>`,
+  },
+  {
+    id: "R69",
+    question: "What is the difference between HTML and React event handling?",
+    answer: `<p><ul><li>- in HTML events are written in lowercase, in React camelCase</li><li>- in HTML can return false to prevent the default behaviour, in React preventDefault() must be called</li><li>- in React functions should not be invoked, if we need to pass an argument we should use () => arrow function or it has to be bind by this keyword (class components)</li><li>- in HTML the event object can be accessed automatically, in React the event objkect is passed as a function parameter and React uses synthetic event system (to normalise events across browsers)</li></ul></p>`,
+  },
+  {
+    id: "R70",
+    question: "What are portals in React?",
+    answer: `<p>Portals in React provide a way to render a component’s content into a different part of the DOM tree, outside of its parent component's DOM hierarchy. This can be useful when you need to visually and structurally separate parts of the UI, such as modals, tooltips, or dropdowns, which should appear outside their parent containers.</p>`,
+  },
+  {
+    id: "R71",
+    question: "What is diffing algorithm?",
+    answer: `<p>The diffing algorithm is a core part of how React efficiently updates the user interface (UI) when the state or props of a component change. React uses this algorithm to compare the Virtual DOM with a previous version of it, determine the differences (or "diffs"), and then update only the parts of the real DOM that have actually changed. This makes React very fast and efficient.</p>`,
+  },
+  {
+    id: "R72",
+    question: "What are differences between React router v5 and v6?",
+    answer: `<p><ul><li>- exact is no longer needed in (<Route exact path="/home" component={Home} />)</li>
+            <li>- Switch replaced with Routes.</li>
+            <li>- component replaced by element (<Route path="/home" element={<Home />} />).</li>
+            <li>- Simplified nested routes with automatic path inheritance ( <Route path="/dashboard" element={<Dashboard />}>
+             <Route path="profile" element={<Profile />} />
+            </Route>).</li>
+            <li>useParams() hook has been introduces</li>
+            <li>- useNavigate replaces useHistory.</li>
+            <li>- Better support for relative routes.</li>
+            <li>- Redirect replaced by Navigate.</li></ul></p>`,
+  },
+  {
+    id: "R73",
+    question: "Major features of React?",
+    answer: `<p><ul><li>- uses VirtualDOM instead of RealDOM</li><li>- supports Server Side Rendering<li>- it uses reusable/composable UI components to develop the view</li></ul></p>`,
+  },
+  {
+    id: "R74",
+    question: "Why we use className instad of class in React?",
+    answer: `<p>This is because the word class is a reserved keyword in JavaScript (especially in ES6) for defining classes in JavaScript. To avoid confusion and conflicts, React uses className for setting the CSS class attribute on HTML elements.</p>`,
+  },
+  {
+    id: "R75",
+    question: "What is Virtualization in the Context of Rendering Lists?",
+    answer: `<p>Virtualization refers to a technique used in web applications to improve the performance of rendering large lists of data. Instead of rendering all items in the list at once, virtualization only renders the items that are currently visible in the viewport (the visible part of the web page) and a few items just outside of it. This reduces the number of DOM elements the browser has to manage, leading to faster rendering and improved performance.</p>`,
   },
 ];
